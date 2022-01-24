@@ -30,8 +30,7 @@ const navbarItems = allDocsRepos.reduce((items, repo) => {
   // always add the current repo to the sidebar for local development and preview deployments
   if (repo.name === currentRepoName) {
     items.push({
-      type: "doc",
-      docId: "intro",
+      to: "/",
       position: "left",
       label: repo.displayName,
     })
@@ -116,7 +115,10 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark'},
       navbar: {
+        hideOnScroll: true,
         title: "Nefino",
         logo: {
           alt: "Nefino Logo",
@@ -129,38 +131,20 @@ const config = {
           {
             href: "https://github.com/nefino",
             position: "right",
-            className: "header-github-link",
+            className: "navbar-item-github",
             "aria-label": "GitHub repository",
           },
         ],
       },
-      footer: {
-        style: "dark",
-        // links: [
-        //   {
-        //     title: "Docs",
-        //     items: [
-        //       {
-        //         label: "Tutorial",
-        //         to: "/docs/intro",
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: "More",
-        //     items: [
-        //       {
-        //         label: "GitHub",
-        //         href: "https://github.com/nefino",
-        //       },
-        //     ],
-        //   },
-        // ],
-        copyright: `Copyright © ${new Date().getFullYear()} Nefino. Built with Docusaurus.`,
-      },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        defaultLanguage: 'js',
+        additionalLanguages: ['dart'],
+        plugins: ['line-numbers', 'show-language'],
+        theme: require('@kiwicopple/prism-react-renderer/themes/vsDark'),
+        darkTheme: require('@kiwicopple/prism-react-renderer/themes/vsDark'),
+      },
+      footer: {
+        copyright: `Copyright © ${new Date().getFullYear()} Nefino. Built with Docusaurus.`,
       },
     }),
 }
