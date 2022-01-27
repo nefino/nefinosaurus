@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "pydoc": "if [ \"$USES_PYDOC\" = \"true\" ]; then pydoc-markdown ../pydoc-markdown.yml; fi ",
+    "pydoc": "if [ \"$USES_PYDOC\" = \"'true'\" ]; then pydoc-markdown ../pydoc-markdown.yml; fi ",
     "start": "yarn pydoc && docusaurus start",
     "build": "yarn pydoc && docusaurus build",
     "swizzle": "docusaurus swizzle",
