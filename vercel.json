@@ -1,13 +1,16 @@
-// jklfds
 {
   "rewrites": [
     {
-      "source": "/android/:path*",
-      "destination": "https://android-portal.vercel.app/:path*"
+      "source": "/django/:path*",
+      "destination": "https://django.docs.nefino.cc/:path*"
     },
     {
-      "source": "/ios/:path*",
-      "destination": "https://ios-portal.vercel.app/:path*"
+      "source": "/react/:path*",
+      "destination": "https://react.docs.nefino.cc/:path*"
+    },
+    {
+      "source": "/airflow/:path*",
+      "destination": "https://airflow.docs.nefino.cc/:path*"
     },
     {
       "source": "/(.*)",
