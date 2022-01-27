@@ -38,8 +38,8 @@ const navbarItems = allDocsRepos.reduce((items, repo) => {
   // if not the current repo and is production environment on Vercel, add portal links
   if (isProd && repo.name !== currentRepoName) {
     items.push({
-      to: `https://docs.nefino.cc/${
-        repo.name !== "nefino_li" ? repo.name : "docs/intro"
+      to: `https://docs.nefino.cc${
+        repo.name !== "nefino_li" ? `/${repo.name}` : ""
       }`,
       target: "_self",
       label: repo.displayName,
