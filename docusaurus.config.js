@@ -38,7 +38,7 @@ const navbarItems = allDocsRepos.reduce((items, repo) => {
   // if not the current repo and is production environment on Vercel, add portal links
   if (isProd && repo.name !== currentRepoName) {
     items.push({
-      to: `https://developers.nefino.li/${
+      to: `https://docs.nefino.cc/${
         repo.name !== "nefino_li" ? repo.name : "docs/intro"
       }`,
       target: "_self",
@@ -53,7 +53,7 @@ const navbarItems = allDocsRepos.reduce((items, repo) => {
 const config = {
   title: "Nefino",
   tagline: "Developer Documentation",
-  url: "https://developers.nefino.li",
+  url: "https://docs.nefino.cc",
   noIndex: true,
   // as nefino_li repo is the base portal repo, change it only in prod for all other repos
   // but also keep it for them if it is not prod for making preview deployments work
@@ -123,7 +123,7 @@ const config = {
         logo: {
           alt: "Nefino Logo",
           src: "img/logo.svg",
-          href: isProd ? "https://developers.nefino.li" : "/",
+          href: isProd ? "https://docs.nefino.cc" : "/",
           target: "_self",
         },
         items: [
