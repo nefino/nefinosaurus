@@ -64,10 +64,9 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "nefino", // Usually your GitHub org/user name.
   projectName: currentRepoName, // Usually your repo name.
-  staticDirectories: ["static", "../.docs/static"],
   presets: [
     [
-      "classic",
+      "@docusaurus/preset-classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
