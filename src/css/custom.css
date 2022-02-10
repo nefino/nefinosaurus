@@ -337,9 +337,9 @@ li + li {
 }
 
 .alert.alert--warning {
-  color: var(--custom-color-orange-800);
-  border-color: var(--custom-color-orange-800);
-  background-color: var(--custom-color-orange-200);
+  /* color: var(--custom-color-orange-800); */
+  /* border-color: var(--custom-color-orange-800); */
+  /* background-color: var(--custom-color-orange-200); */
   border-color: var(--custom-color-orange-400);
   margin: 20px 0;
   font-size: 0.9rem;
