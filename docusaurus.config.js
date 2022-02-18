@@ -103,6 +103,7 @@ const config = {
             }
             return sidebarItems
           },
+          remarkPlugins: [require('mdx-mermaid')],
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
