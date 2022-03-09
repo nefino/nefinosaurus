@@ -1,3 +1,5 @@
+import {Buffer} from "buffer"
+
 export function middleware(req: Request) {
   const basicAuth = req.headers.get('authorization')
 
