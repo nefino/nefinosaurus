@@ -9,7 +9,7 @@ export function middleware(req: Request) {
 
     if (user === '4dmin' && pwd === 'testpwd123') {
         // if we need more middleware, we have to figure out how to mimic NextResponse.next()
-      return Response
+      return new Response()
     }
   }
 
