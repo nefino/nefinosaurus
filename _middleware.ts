@@ -1,18 +1,35 @@
-// import {Buffer} from "buffer"
+function isAsset(url) {
+  return /\.(png|jpe?g|gif|css|js|svg|ico|map|json)$/i.test(url.pathname)
+}
 
-export function middleware(req: Request) {
-  // const basicAuth = req.headers.get('authorization')
+export default function middleware(req: Request) {
+  const url = new URL(req.url)
 
-  // if (basicAuth) {
-  //   const auth = basicAuth.split(' ')[1]
-  //   return new Response()
-  //   const [user, pwd] = Buffer.from(auth, 'base64').toString().split(':')
+  // If the request is requesting an asset file, do not run our
+  // middleware function.
+  if (isAsset(url)) {
+    // Continue with Vercel's default asset handler
+    return new Response(null, {
+      headers: { 'x-middleware-next': '1' },
+    })
+  }
 
-  //   if (user === '4dmin' && pwd === 'testpwd123') {
-  //       // if we need more middleware, we have to figure out how to mimic NextResponse.next()
-  //     return new Response()
-  //   }
-  // }
+  const basicAuth = req.headers['authorization']
+
+  if (basicAuth) {
+    const auth = basicAuth.split(' ')[1]
+    const decodedAuth = atob(auth).split(':')
+    const user = decodedAuth[0]
+    const pwd = decodedAuth[1]
+
+    if (user === '4dmin' && pwd === 'testpwd123') {
+      return new Response(null, {
+        headers: {
+          'x-middleware-next': '1',
+        },
+      })
+    }
+  }
 
   return new Response('Auth required', {
     status: 401,
