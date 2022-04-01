@@ -1,16 +1,16 @@
 {
   "rewrites": [
     {
-      "source": "/:path*",
-      "destination": "https://google.com"
-    },
-    {
       "source": "/react/:path*",
       "destination": "https://react.docs.nefino.cc/:path*"
     },
     {
       "source": "/airflow/:path*",
       "destination": "https://airflow.docs.nefino.cc/:path*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://google.com"
     },
     {
       "source": "/(.*)",
