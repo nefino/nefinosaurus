@@ -1,17 +1,21 @@
 {
   "redirects":[
     {
-      "source":"/:file((?<!AUTHED).*)",
-      "destination": "https://sadtrombone.com",
-      "permanent": false
-    },
-    {
-      "source": "/:path*",
-      "destination": "/:path*?AUTHED",
+      "source": "/:path*/(auth-zone.*)",
+      "destination": "/:path*/auth-zone",
       "permanent":false
     }
   ],
   "rewrites": [
+    {
+      "source": "/:path*/((?<=auth-zone).*)",
+      "destination":"/:path*",
+      "has": {
+        "type": "cookie",
+        "key": "auth",
+        "value": "testPass"
+      }
+    },
     {
       "source": "/django/:path*",
       "destination": "https://django.docs.nefino.cc/:path*"
