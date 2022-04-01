@@ -9,7 +9,7 @@
   "rewrites": [
     {
       "source": "/auth-zone/:path*",
-      "destination":"/"
+      "destination":"/index.html"
     },
     {
       "source": "/django/:path*",
