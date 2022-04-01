@@ -2,7 +2,7 @@
   "redirects":[
     {
       "source": "/overview/architecture",
-      "destination": "/auth-zone/overview/architecture/",
+      "destination": "/auth-zone/overview/architecture",
       "permanent":false
     }
   ],
