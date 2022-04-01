@@ -6,7 +6,7 @@
     },
     {
       "source": "/django/:path*",
-      "destination": "https://django.docs.nefino.cc/:path*"
+      "destination": "/"
     },
     {
       "source": "/react/:path*",
