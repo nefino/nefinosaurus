@@ -1,9 +1,14 @@
 {
   "redirects":[
     {
-      "source":"/:path*",
+      "source":"/:file((?<!AUTHED).*)",
       "destination": "https://sadtrombone.com",
       "permanent": false
+    },
+    {
+      "source": "/:path*",
+      "destination": "/:path*?AUTHED",
+      "permanent":false
     }
   ],
   "rewrites": [
