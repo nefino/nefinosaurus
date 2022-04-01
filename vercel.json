@@ -1,11 +1,7 @@
 {
   "rewrites": [
     {
-      "source":"/",
-      "destination": "/guides/jupyter"
-    },
-    {
-      "source": "/django/:path*",
+      "source": "/:path*",
       "destination": "https://google.com"
     },
     {
