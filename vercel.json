@@ -9,12 +9,7 @@
   "rewrites": [
     {
       "source": "/auth-zone/:path*",
-      "destination":"/:path*",
-      "has": {
-        "type": "cookie",
-        "key": "auth",
-        "value": "testPass"
-      }
+      "destination":"/:path*"
     },
     {
       "source": "/django/:path*",
