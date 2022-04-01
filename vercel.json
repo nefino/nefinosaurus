@@ -1,15 +1,15 @@
 {
   "redirects":[
     {
-      "source": "/:path/((?<!auth-zone).*)",
-      "destination": "/:path/auth-zone",
+      "source": "/overview/architecture",
+      "destination": "/auth-zone/overview/architecture/",
       "permanent":false
     }
   ],
   "rewrites": [
     {
-      "source": "/:path/((?<=auth-zone).*)",
-      "destination":"/:path",
+      "source": "/auth-zone/:path*",
+      "destination":"/:path*",
       "has": {
         "type": "cookie",
         "key": "auth",
