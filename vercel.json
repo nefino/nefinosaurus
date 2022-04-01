@@ -1,24 +1,28 @@
 {
-  "rewrites": [
-    {
-      "source":"/:path*",
-      "destination": "https://sadtrombone.com"
-    },
-    {
-      "source": "/django/:path*",
-      "destination": "https://django.docs.nefino.cc/:path*"
-    },
-    {
-      "source": "/react/:path*",
-      "destination": "https://react.docs.nefino.cc/:path*"
-    },
-    {
-      "source": "/airflow/:path*",
-      "destination": "https://airflow.docs.nefino.cc/:path*"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ]
+  "rewrites": {
+    "afterFiles": [
+      {
+        "source": "/django/:path*",
+        "destination": "https://django.docs.nefino.cc/:path*"
+      },
+      {
+        "source": "/react/:path*",
+        "destination": "https://react.docs.nefino.cc/:path*"
+      },
+      {
+        "source": "/airflow/:path*",
+        "destination": "https://airflow.docs.nefino.cc/:path*"
+      },
+      {
+        "source": "/(.*)",
+        "destination": "/"
+      }
+    ],
+    "beforeFiles": [
+      {
+        "source": "/:path*",
+        "destination": "https://sadtrombone.com"
+      }
+    ]
+  }
 }
