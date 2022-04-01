@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source":"/",
+      "destination": "/guides/jupyter"
+    },
+    {
       "source": "/django/:path*",
       "destination": "https://django.docs.nefino.cc/:path*"
     },
