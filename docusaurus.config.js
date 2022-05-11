@@ -83,6 +83,8 @@ const config = {
           exclude: [
             // we need to exclude underscore files if using pydocs for including private api files
             ...(!usesPydoc ? ["**/_*.{js,jsx,ts,tsx,md,mdx}", "**/_*/**"] : []),
+            // exclude double underscore prefixed files from sidebar
+            "**/__*.{js,jsx,ts,tsx,md,mdx}",
             "**/*.test.{js,jsx,ts,tsx}",
             "**/__tests__/**",
             "**/static/**",
