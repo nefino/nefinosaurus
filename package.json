@@ -5,8 +5,11 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "pydoc": "if [ \"$USES_PYDOC\" = \"true\" ]; then pydoc-markdown ../pydoc-markdown.yml && json='{\"label\": \"API Reference\", \"collapsed\": false, \"position\": 2}' && echo \"$json\" > ../.docs/reference/_category_.json; fi ",
+    "clidoc": "if [ \"$USES_CLIDOC\" = \"true\" ]; then ../cli/cli_doc.sh /nefino_li; fi ",
     "start": "yarn pydoc && docusaurus start",
+    "local-start": "yarn pydoc && yarn clidoc && docusaurus start",
     "build": "yarn pydoc && docusaurus build",
+    "local-build": "yarn pydoc && yarn clidoc && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
