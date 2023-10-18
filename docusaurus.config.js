@@ -70,7 +70,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          path: "../.docs",
+          path: "../.docs/get-started",
           // Use docs-only mode
           // https://docusaurus.io/docs/docs-introduction#docs-only-mode
           routeBasePath: "/",
@@ -108,12 +108,12 @@ const config = {
           remarkPlugins: [require('mdx-mermaid')],
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+        customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
   ],
-
+  
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
