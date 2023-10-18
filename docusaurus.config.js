@@ -78,7 +78,7 @@ const config = {
           // Please change this to your repo.
           ...(isProd && {
             editUrl: ({ versionDocsDirPath, docPath }) =>
-              `https://bitbucket.org/Nefino/${currentRepoName}/src/master/.docs/${versionDocsDirPath}/${docPath}?mode=edit&at=master`,
+              `https://github/nefino/${currentRepoName}/src/master/.docs/${versionDocsDirPath}/${docPath}?mode=edit&at=master`,
           }),
           exclude: [
             // we need to exclude underscore files if using pydocs for including private api files
