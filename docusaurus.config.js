@@ -207,6 +207,11 @@ const config = {
     ({
       colorMode: {
         defaultMode: 'dark'},
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        }
+      },
       navbar: {
         hideOnScroll: true,
         title: "Nefino",
