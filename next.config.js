@@ -4,16 +4,6 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/django/:path*",
-        has: [
-          {
-            type: "host",
-            value: "docs.nefino.cc",
-          },
-        ],
-        destination: "https://django.docs.nefino.cc/:path*",
-      },
-      {
         source: "/react/:path*",
         has: [
           {
@@ -22,16 +12,6 @@ const nextConfig = {
           },
         ],
         destination: "https://react.docs.nefino.cc/:path*",
-      },
-      {
-        source: "/airflow/:path*",
-        has: [
-          {
-            type: "host",
-            value: "docs.nefino.cc",
-          },
-        ],
-        destination: "https://airflow.docs.nefino.cc/:path*",
       },
       {
         source: "/(.*)",
