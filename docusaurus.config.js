@@ -17,37 +17,43 @@ const currentRepoName =
         .trim()
     : process.env.VERCEL_GIT_REPO_SLUG
 
-// Add new repos to this object and keep the desired order
-const allDocsRepos = [
-  { name: "nefino_li", displayName: "Get Started" },
-  { name: "django", displayName: "Django" },
-  { name: "react", displayName: "React" },
-  { name: "airflow", displayName: "Airflow" },
-]
+const navbarItems = []
 
-// We will add the items to the navbar conditionally
-const navbarItems = allDocsRepos.reduce((items, repo) => {
-  // always add the current repo to the sidebar for local development and preview deployments
-  if (repo.name === currentRepoName) {
-    items.push({
-      to: "/",
-      position: "left",
-      label: repo.displayName,
-    })
-  }
-  // if not the current repo and is production environment on Vercel, add portal links
-  if (isProd && repo.name !== currentRepoName) {
-    items.push({
-      to: `https://docs.nefino.cc${
-        repo.name !== "nefino_li" ? `/${repo.name}` : ""
-      }`,
-      target: "_self",
-      label: repo.displayName,
-      position: "left",
-    })
-  }
-  return items
-}, [])
+if (currentRepoName === "nefino_li") {
+  navbarItems.push({
+    to: "/",
+    position: "left",
+    label: "Get Started",
+  }, 
+  {
+    to: "/django",
+    position: "left",
+    label: "Django",
+  },
+  {
+    to: "/airflow",
+    position: "left",
+    label: "Airflow",
+  },
+  )
+}
+
+if (currentRepoName === "react") {
+  navbarItems.push({
+    to: "/",
+    position: "left",
+    label: "React",
+  })
+}
+
+if (isProd && currentRepoName === "nefino_li") {
+  navbarItems.push({
+    to: "https://docs.nefino.cc/react",
+    target: "_self",
+    position: "left",
+    label: "React",
+  })
+}
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
