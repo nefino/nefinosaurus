@@ -24,7 +24,7 @@ if (currentRepoName === "nefino_li") {
     to: "/",
     position: "left",
     label: "Get Started",
-  }, 
+  },
   {
     to: "/django",
     position: "left",
@@ -147,7 +147,7 @@ const config = {
         remarkPlugins: [require('mdx-mermaid')],
       }),
     ],
-    [
+    currentRepoName === "nefino_li" && [
       "@docusaurus/plugin-content-docs",
       /** @type {import('@docusaurus/plugin-content-docs').Options} */
       ({
@@ -191,7 +191,7 @@ const config = {
       }),
     ],
   ],
-  
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
